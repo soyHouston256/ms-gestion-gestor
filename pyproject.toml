@@ -1,0 +1,9 @@
+[project]
+name = "ms-gestion-gestor"
+version = "1.0.0"
+description = "Microservicio para la gestión de gestores"
+
+[tool.fastapi.dev]
+port = 7000
+host = "0.0.0.0"
+reload = true 

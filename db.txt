@@ -1,0 +1,22 @@
+-- Crear tabla persona para MySQL basada en el nuevo schema
+CREATE TABLE gestor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_gestor INT NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    documento VARCHAR(50) NOT NULL,
+    tipo_documento VARCHAR(20) NOT NULL,
+    peso INT NOT NULL
+);
+
+-- Insertar 10 registros de prueba
+INSERT INTO gestor (codigo_gestor, nombre, documento, tipo_documento, peso) VALUES
+(1001, 'Juan Carlos Pérez', '12345678', 'DNI', 7),
+(1002, 'María González López', '87654321', 'DNI', 6),
+(1003, 'Carlos Rodríguez', '11223344', 'PASAPORTE', 8),
+(1004, 'Ana Martínez', '55667788', 'DNI', 5),
+(1005, 'Luis Fernández', '99887766', 'CEDULA', 7),
+(1006, 'Carmen Silva', '44332211', 'DNI', 6),
+(1007, 'Roberto Díaz', '77889900', 'PASAPORTE', 8),
+(1008, 'Isabel Morales', '22334455', 'DNI', 6),
+(1009, 'Fernando Ruiz', '66778899', 'CEDULA', 7),
+(1010, 'Patricia Vega', '33445566', 'DNI', 5);
