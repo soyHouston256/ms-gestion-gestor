@@ -20,11 +20,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-host_name = "localhost" # IPv4 privada de "MV Bases de Datos"
-port_number = "3306"
-user_name = "root"
-password_db = "root"
-database_name = "db_poliza"
+import os
+
+host_name = os.getenv("MYSQL_HOST", "localhost")  # Use mysql container in Docker
+port_number = os.getenv("MYSQL_PORT", "3306")
+user_name = os.getenv("MYSQL_USER", "root")
+password_db = os.getenv("MYSQL_PASSWORD", "root")
+database_name = os.getenv("MYSQL_DATABASE", "db_poliza")
 
 # Get echo test for load balancer's health check
 @app.get("/health", tags=["Health Check"])
@@ -113,4 +115,4 @@ def get_gestor(codigo_gestor: str):
 # Configuración para fastapi dev
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=7000, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=6000, reload=True)
