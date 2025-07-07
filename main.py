@@ -115,4 +115,4 @@ def get_gestor(codigo_gestor: str):
 # Configuración para fastapi dev
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=6000, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=6005, reload=True)
